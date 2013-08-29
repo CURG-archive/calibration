@@ -1,0 +1,14 @@
+from ar_calibration import *
+
+rospy.init_node('arm_position_publisher')
+tf_publisher = tf.TransformBroadcaster()
+rospy.Rate(10.0)
+while not rospy.is_shutdown():
+    t = get_staubli_cartesian_as_tran()
+    t_tf = pm.toTf(pm.fromMatrix(t))
+    tf_publisher.sendTransform(t_tf[0], t_tf[1], rospy.Time.now(),"/armbase","/hand")
+
+
+
+ 
+  

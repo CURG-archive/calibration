@@ -1,0 +1,19 @@
+<package>
+  <description brief="calibration">
+     calibration
+  </description>
+  <author>Wei-Chun Yuan</author>
+  <license>BSD</license>
+  <review status="unreviewed" notes=""/>
+  <url>http://ros.org/wiki/calibration</url>
+  <depend package="tf"/>
+  <depend package="bullet"/>
+  <depend package="roscpp"/>
+  <depend package="rospy"/>
+  <depend package="tf_conversions"/>
+  <depend package="std_msgs"/>
+  <depend package="staubliTX60" />
+  <depend package="OpenCV" />
+</package>
+
+
