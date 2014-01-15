@@ -1,0 +1,26 @@
+<package>
+ <name>calibration</name>
+  <version>1.0.0</version>
+  <description>calibration</description>
+  <maintainer email="jvarley@cs.columbia.edu">Jake Varley</maintainer>
+  <author>Wei-Chun Yuan</author>
+  <license>BSD</license>
+  <url>http://ros.org/wiki/calibration</url>
+
+  <buildtool_depend>catkin</buildtool_depend>
+
+  <build_depend>tf</build_depend>
+  <build_depend>bullet</build_depend>
+  <build_depend>roscpp</build_depend>
+  <build_depend>rospy</build_depend>
+  <build_depend>tf_conversions</build_depend>
+  <build_depend>std_msgs</build_depend>
+  <build_depend>staubliTX60</build_depend>
+
+  <run_depend>tf</run_depend>
+  <run_depend>roscpp</run_depend>
+
+
+</package>
+
+

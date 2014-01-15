@@ -1,2 +1,0 @@
-- setup-file:
-    local-name: /home/armuser/ros/rosbuild_src/calibration/build/devel/setup.sh
