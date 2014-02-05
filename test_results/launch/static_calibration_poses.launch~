@@ -1,5 +1,0 @@
-<launch>
-   <node pkg="tf" type="static_transform_publisher" name="arm_to_hand"  args="0 0 0.149 5.0614 0 0  arm hand 10" />
-   <node pkg="tf" type="static_transform_publisher" name="arm_goal_to_hand_goal"  args="0 0 -0.149 0 0 1.222 hand_goal arm_goal 10" />
-   
-</launch>
