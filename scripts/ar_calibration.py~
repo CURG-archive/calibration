@@ -10,8 +10,8 @@ from numpy import pi, eye, dot, cross, linalg, sqrt, ceil, size
 from numpy import hstack, vstack, mat, array, arange, fabs, zeros
 import opencv
 import math
-import staubliTX60.msg
-import staubliTX60.srv
+import staubli_tx60.msg
+import staubli_tx60.srv
 import actionlib
 from trajectory_planner import *
 from std_msgs.msg import Empty
@@ -38,7 +38,7 @@ def TransformIntersection( T_set ):
 def get_staubli_cartesian_as_pose_msg():
     rospy.wait_for_service('getCartesian')
     try:
-        get_cartesian = rospy.ServiceProxy( 'getCartesian', staubliTX60.srv.GetCartesian )
+        get_cartesian = rospy.ServiceProxy( 'getCartesian', staubli_tx60.srv.GetCartesian )
         resp1 = get_cartesian()
         # make srv x y z  rx ry rz euler angle representation into pose message
         pos = geometry_msgs.msg.Point( x = resp1.x, y = resp1.y, z = resp1.z )
