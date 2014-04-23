@@ -3,4 +3,27 @@
   <include file="$(find calibration)/launch/static_calibration_poses.launch" />
   <include file="$(find checkerboard_detection)/launch/kinect_camerapose.launch" />
   <node name="hand_pose_pub" pkg="calibration" type="arm_position_publisher.py" respawn="true" />
+
+     <node pkg="tf" type="static_transform_publisher" name="world_to_arm" args="0.50038048 0.4289552 -0.00242910390733 -0.00625260676675 0.00683575101182 0.999954136448 /world /staubli_rx60l_link1 100"/>
+
+<!--transforms:
+  -
+    header:
+      seq: 0
+      stamp:
+        secs: 1398182413
+        nsecs: 797169324
+      frame_id: world
+    child_frame_id: armbase
+    transform:
+      translation:
+        x: 0.50038048
+        y: 0.4289552
+        z: 0.33142623
+      rotation:
+        x: -0.00242910390733
+        y: -0.00625260676675
+        z: 0.00683575101182
+        w: 0.999954136448 -->
+
 </launch>
