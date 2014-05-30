@@ -3,7 +3,7 @@
   <include file="$(find checkerboard_detection)/launch/kinect_camerapose.launch" />
 
    <node pkg="tf" type="static_transform_publisher" name="world_to_arm" args="0.50038048 0.4289552 0.33142623 -0.00242910390733 -0.00625260676675 0.00683575101182 0.999954136448 /world /arm_base 100"/>
-   <node pkg="tf" type="static_transform_publisher" name="arm_base_to_link1" args="0 0 -.4 0 0 0 /arm_base /staubli_rx60l_link1 100"/>
+   <node pkg="tf" type="static_transform_publisher" name="arm_base_to_link1" args="0 0 0 0 0 0 /arm_base /staubli_rx60l_link1 100"/>
 
 
 </launch>
