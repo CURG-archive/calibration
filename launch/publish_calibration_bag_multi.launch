@@ -1,0 +1,19 @@
+<launch>
+<include file="$(find calibration)/launch/publish_calibration_bag.launch">
+  <arg name="bagfile" value="$(find calibration)/data/2014-12-16-13-56-27.bag"/>
+  <arg name="prefix" value="test1"/>  
+</include>
+<include file="$(find calibration)/launch/publish_calibration_bag.launch">
+  <arg name="bagfile" value="$(find calibration)/data/2014-12-16-13-57-05.bag"/>
+  <arg name="prefix" value="test2"/>  
+</include>
+<include file="$(find calibration)/launch/publish_calibration_bag.launch">
+  <arg name="bagfile" value="$(find calibration)/data/2014-12-16-13-56-00.bag"/>
+  <arg name="prefix" value="test3"/>  
+</include>
+
+<include file="$(find calibration)/launch/publish_calibration_bag.launch">
+  <arg name="bagfile" value="$(find calibration)/data/2014-12-16-13-58-00.bag"/>
+  <arg name="prefix" value="test4"/>  
+</include>
+</launch>

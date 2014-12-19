@@ -1,0 +1,29 @@
+<launch>
+<arg name="bagfile" default=""/>
+<arg name="prefix" default=""/>
+
+
+
+<node name="$(arg prefix)_rosbag" pkg="rosbag" type="play" args="--skip-empty=.5 -l $(arg bagfile)">
+    <remap from="/joint_states" to="$(arg prefix)/joint_states" />
+    <remap from="/filtered_pc" to="$(arg prefix)/filtered_pc" />
+</node>
+
+<node name="$(arg prefix)_restamper" pkg="calibration" type="restamp_msg.py" >
+      <rosparam param="restamped_topics" subst_value="True">['/$(arg prefix)/joint_states', '/$(arg prefix)/filtered_pc']</rosparam>
+</node>
+
+<node name="$(arg prefix)_joint_state_publisher" pkg="joint_state_publisher" type="joint_state_publisher">
+       <param name="/use_gui" value="false"/>
+       <rosparam param="source_list" subst_value="true">[/restamped/$(arg prefix)/joint_states]</rosparam>
+       <remap from="joint_states" to="/restamped/$(arg prefix)/joint_states_full" />
+</node>
+
+
+<node name="$(arg prefix)_robot_publisher" pkg="robot_state_publisher" type="robot_state_publisher">	 <remap from="joint_states" to="/restamped/$(arg prefix)/joint_states_full" />
+      <param name="tf_prefix" value="/$(arg prefix)"/>
+</node>
+
+<node name="$(arg prefix)_static_tf" pkg="tf" type="static_transform_publisher" args="0 0 0 0 0 0 /root $(arg prefix)/root 100" />
+     
+</launch>
